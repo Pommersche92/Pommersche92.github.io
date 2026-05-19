@@ -1,3 +1,15 @@
+DUAL LICENSE
+============
+
+This repository contains two types of content, each licensed separately:
+
+================================================================================
+PART 1: WEBSITE CODE AND TECHNICAL COMPONENTS
+================================================================================
+
+All website code, HTML, CSS, JavaScript, configuration files, and other 
+technical components are licensed under the GNU General Public License v3.0.
+
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
@@ -672,3 +684,47 @@ may consider it more useful to permit linking proprietary applications with
 the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
 <https://www.gnu.org/licenses/why-not-lgpl.html>.
+
+================================================================================
+PART 2: BLOG CONTENT AND WRITTEN ARTICLES
+================================================================================
+
+All blog posts, articles, written content, images, and other creative works
+in this repository are proprietary and subject to the following terms:
+
+Copyright © 2026 Raimo Geisel. All Rights Reserved.
+
+PROPRIETARY LICENSE FOR BLOG CONTENT
+
+1. COPYRIGHT NOTICE
+   All blog content, including but not limited to articles, blog posts, 
+   written text, images, graphics, and other creative materials created by 
+   Raimo Geisel, are the exclusive property of Raimo Geisel and are protected 
+   by copyright law.
+
+2. RESTRICTIONS
+   Without prior written permission from Raimo Geisel, you may NOT:
+   - Copy, reproduce, or redistribute any blog content
+   - Modify, adapt, or create derivative works
+   - Publish, display, or distribute the content on other websites or media
+   - Use the content for commercial purposes
+   - Remove or alter any copyright notices
+
+3. PERMITTED USE
+   You may:
+   - Read and view the blog content through the official website
+   - Share links to the blog posts
+   - Quote brief excerpts (up to 200 words) with proper attribution and a 
+     link back to the original article
+
+4. ATTRIBUTION
+   Any permitted use must include clear attribution to Raimo Geisel and a 
+   link to the original source at the official blog.
+
+5. CONTACT
+   For permissions, licensing inquiries, or questions about this license, 
+   please contact Raimo Geisel.
+
+================================================================================
+END OF LICENSE
+================================================================================

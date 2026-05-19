@@ -1,0 +1,58 @@
+# Site settings
+title: Raimo Geisel
+description: Blog about technology and creative writing
+author: Raimo Geisel
+email: raimo@geisel-web.de
+url: "https://pommersche92.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+timezone: Europe/Berlin
+lang: en
+
+# Collections
+collections:
+  stories:
+    output: true
+    permalink: /stories/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Raimo Geisel"
+      category: "blog"
+  - scope:
+      path: ""
+      type: "stories"
+    values:
+      layout: "story"
+      author: "Raimo Geisel"
+      category: "story"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - "*.sample"
+  - "_posts/*.sample"
+  - "_stories/*.sample"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Theme settings
+theme_color: "#6366f1"
+glassmorphism: true

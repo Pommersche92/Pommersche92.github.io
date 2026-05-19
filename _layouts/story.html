@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+<article class="post-container story-container">
+  <div class="post-header glass fade-in">
+    <div class="post-meta">
+      <span class="post-category story-category">SHORT STORY</span>
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%B %d, %Y" }}
+      </time>
+    </div>
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="post-description">{{ page.description }}</p>
+    {% endif %}
+    <div class="post-author">
+      <span>By {{ page.author | default: site.author }}</span>
+    </div>
+  </div>
+
+  <div class="post-content story-content glass fade-in">
+    {{ content }}
+  </div>
+
+  {% if page.tags %}
+  <div class="post-tags glass fade-in">
+    {% for tag in page.tags %}
+      <span class="tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="post-interactions glass fade-in">
+    <div class="like-section">
+      <button class="like-btn" data-post="{{ page.url }}" aria-label="Like">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+        </svg>
+        <span class="like-count">0</span>
+      </button>
+      <button class="dislike-btn" data-post="{{ page.url }}" aria-label="Dislike">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"></path>
+        </svg>
+        <span class="dislike-count">0</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="comments-section glass fade-in">
+    <h2>Kommentare</h2>
+    <div id="giscus-comments"></div>
+  </div>
+
+  <nav class="post-navigation glass fade-in">
+    {% if page.previous %}
+      <a href="{{ page.previous.url | relative_url }}" class="nav-prev">
+        <span class="nav-label">← Vorherige Geschichte</span>
+        <span class="nav-title">{{ page.previous.title }}</span>
+      </a>
+    {% endif %}
+    {% if page.next %}
+      <a href="{{ page.next.url | relative_url }}" class="nav-next">
+        <span class="nav-label">Nächste Geschichte →</span>
+        <span class="nav-title">{{ page.next.title }}</span>
+      </a>
+    {% endif %}
+  </nav>
+</article>
+
+<script src="{{ '/assets/js/interactions.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/comments.js' | relative_url }}"></script>

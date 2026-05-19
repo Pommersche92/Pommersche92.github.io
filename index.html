@@ -1,0 +1,54 @@
+---
+layout: default
+title: Home
+---
+
+<div class="page-header glass fade-in">
+  <h1 class="page-title">{{ site.title }}</h1>
+  <p class="page-description">{{ site.description }}</p>
+</div>
+
+<div class="container">
+  <div class="posts-grid">
+    {% assign all_posts = site.posts | concat: site.stories | sort: 'date' | reverse %}
+    
+    {% for post in all_posts limit:12 %}
+      <article class="post-card glass slide-in" style="animation-delay: {{ forloop.index | times: 0.1 }}s;">
+        <div class="post-card-meta">
+          {% if post.collection == 'stories' %}
+            <span class="post-category story-category">SHORT STORY</span>
+          {% else %}
+            <span class="post-category">BLOG</span>
+          {% endif %}
+          <time datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%d.%m.%Y" }}
+          </time>
+        </div>
+        
+        <h2 class="post-card-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h2>
+        
+        {% if post.description %}
+          <p class="post-card-excerpt">{{ post.description }}</p>
+        {% elsif post.excerpt %}
+          <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+        {% endif %}
+        
+        <a href="{{ post.url | relative_url }}" class="post-card-link">
+          Read more →
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+  
+  {% if all_posts.size == 0 %}
+    <div class="glass fade-in" style="padding: 3rem; text-align: center; margin: 2rem;">
+      <div style="font-size: 4rem; margin-bottom: 1rem;">🚀</div>
+      <h2 style="color: var(--accent); margin-bottom: 1rem;">Coming Soon</h2>
+      <p style="color: var(--text-secondary); font-size: 1.125rem;">
+        Exciting content is on its way! Check back soon for new articles and stories.
+      </p>
+    </div>
+  {% endif %}
+</div>
